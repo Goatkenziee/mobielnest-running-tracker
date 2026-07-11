@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── MobielNest Design Tokens ──────────────────────────────
+   Brand: rose quartz · calm, airy, muted with vivid rose action color
+   Applied globally via :root so every component inherits. */
+
+@layer base {
+  :root {
+    --background: 350 20% 98%;
+    --foreground: 340 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 15% 15%;
+
+    --primary: 350 65% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 20% 92%;
+    --secondary-foreground: 340 15% 25%;
+
+    --muted: 340 15% 94%;
+    --muted-foreground: 340 10% 45%;
+
+    --accent: 350 70% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 15% 88%;
+    --input: 340 15% 88%;
+    --ring: 350 65% 55%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 340 15% 8%;
+    --foreground: 340 10% 92%;
+
+    --card: 340 15% 12%;
+    --card-foreground: 340 10% 92%;
+
+    --popover: 340 15% 12%;
+    --popover-foreground: 340 10% 92%;
+
+    --primary: 350 65% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 15% 18%;
+    --secondary-foreground: 340 10% 85%;
+
+    --muted: 340 15% 18%;
+    --muted-foreground: 340 10% 60%;
+
+    --accent: 350 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 15% 22%;
+    --input: 340 15% 22%;
+    --ring: 350 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ── Custom scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
